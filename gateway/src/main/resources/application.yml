@@ -1,0 +1,90 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: ext-async-rcv
+          uri: http://localhost:8081
+          predicates:
+            - Path=/deposits/** 
+        - id: intermediary
+          uri: http://localhost:8082
+          predicates:
+            - Path=/deposits/** 
+        - id: ext-sync-sndrcv
+          uri: http://localhost:8083
+          predicates:
+            - Path=/deposits/** 
+        - id: depositreplyprocess
+          uri: http://localhost:8084
+          predicates:
+            - Path=/depositReplies/** 
+        - id: ext-async-snd
+          uri: http://localhost:8085
+          predicates:
+            - Path=/depositReplies/** 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: ext-async-rcv
+          uri: http://extAsyncRcv:8080
+          predicates:
+            - Path=/deposits/** 
+        - id: intermediary
+          uri: http://intermediary:8080
+          predicates:
+            - Path=/deposits/** 
+        - id: ext-sync-sndrcv
+          uri: http://extSyncSndrcv:8080
+          predicates:
+            - Path=/deposits/** 
+        - id: depositreplyprocess
+          uri: http://depositreplyprocess:8080
+          predicates:
+            - Path=/depositReplies/** 
+        - id: ext-async-snd
+          uri: http://extAsyncSnd:8080
+          predicates:
+            - Path=/depositReplies/** 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080

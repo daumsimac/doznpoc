@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gateway/boot-camp-gateway.iml" filepath="$PROJECT_DIR$/gateway/boot-camp-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/depositreplyprocess/depositreplyprocess.iml" filepath="$PROJECT_DIR$/depositreplyprocess/depositreplyprocess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ext-async-rcv/ext-async-rcv.iml" filepath="$PROJECT_DIR$/ext-async-rcv/ext-async-rcv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ext-async-snd/ext-async-snd.iml" filepath="$PROJECT_DIR$/ext-async-snd/ext-async-snd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ext-sync-sndrcv/ext-sync-sndrcv.iml" filepath="$PROJECT_DIR$/ext-sync-sndrcv/ext-sync-sndrcv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intermediary/intermediary.iml" filepath="$PROJECT_DIR$/intermediary/intermediary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/virtualaccount.iml" filepath="$PROJECT_DIR$/.idea/virtualaccount.iml" />
+    </modules>
+  </component>
+</project>
