@@ -11,8 +11,8 @@
         <module name="ext-async-snd" />
         <module name="boot-camp-gateway" />
         <module name="intermediary" />
-        <module name="ext-async-rcv" />
         <module name="depositreplyprocess" />
+        <module name="ext-async-rcv" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,0 +1,13 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: depositreply02
+  namespace: my-kafka-project
+  labels:
+    strimzi.io/cluster: "my-cluster"
+spec:
+  partitions: 2
+  replicas: 1
+  config:
+    retention.ms: 900000
+    segment.bytes: 1073741824
